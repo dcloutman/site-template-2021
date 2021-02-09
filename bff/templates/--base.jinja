@@ -43,16 +43,17 @@
             {% if show_page_aside %}
                 <aside id="page_aside">
                 {% block page_aside %}
-                    &lquote; Pithy quote goes here. &rquote;
+                    &lquote; Catchy quote goes here. &rquote;
                 {% endblock %}
                 </aside>
             {% endif %}
             <section>
                 <header>
-                    <h2>Section 1</h2>
+                    <h2>Text Section</h2>
                 </header>
-                <p></p>
-                <p></p>
+                <p>This is some <strong>hot blog post</strong>. You have to read it. You know you want to.</p>
+                <p>There sure is <em>a lot of detail</em> here. Let's learn more. I could go on and on, but I won't.</p>
+                <p>Wow, what a meaningful conclusion. That was great.</p>
             </section>
             <section>
                 <header>
@@ -72,7 +73,7 @@
     </main>
     <footer>
         <div id="footer_grid" class="outer_content_wrapper">
-            <section class="footer_column" id="footer_column_3">
+            <section class="footer_column" id="footer_social">
                 <header>
                     <h4>Social Media</h4>
                 </header>
@@ -82,7 +83,7 @@
                     <li><a href="#" class="circle-button" style="background-color: #405DE6;">I</a></li>
                 </ul>
             </section>
-            <section class="footer_column" id="footer_column_1">
+            <section class="footer_column" id="footer_nav">
                 <header>
                     <h4>Footer Navigation</h4>
                 </header>
@@ -94,7 +95,7 @@
                     </ul>
                 </nav>
             </section>
-            <section class="footer_column" id="footer_column_2">
+            <section class="footer_column" id="footer_partners">
                 <header>
                     <h4>Partners Section</h4>
                 </header>
@@ -104,15 +105,16 @@
                     <li>Y</li>
                 </ul>
             </section>
-            <section class="footer_column" id="footer_column_4">
+            <section class="footer_column" id="footer_disclaimer">
                 <header>
-                    <h4>Disclaimer</h4>
+                    <h4>Disclaimer Zone</h4>
                 </header>
                 <p>
                     Sometimes contact information or some legal stipulations get placed here.
                 </p>
             </section>
-            <address>
+
+            <address id="footer_copyright">
                 &copy; 2021 David Cloutman
             </address>
         </div>

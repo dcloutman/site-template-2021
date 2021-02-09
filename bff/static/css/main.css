@@ -35,6 +35,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-headline);
 }
 
+h1 {
+    color: var(--color-primary);
+}
+
+h2, h3, h4, h5, h6 {
+    color: var(--color-gray-dark);
+}
+
 a {
     text-decoration: none;
     color: var(--color-link);
@@ -60,7 +68,52 @@ main {
 
 footer {
     background-color: var(--color-gray);
+    color: var(--color-gray-dark);
+
+    font-size: .9em;
 }
+
+footer h4 {
+    color: var(--color-almost-white);
+
+    font-size: 1em;
+}
+
+#footer_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0px 0px;
+    grid-template-areas:
+        "social footer_nav partners disclaimer"
+        "copyright copyright copyright copyright";
+}
+
+#footer_copyright {
+    grid-area: copyright;
+    font-style: normal;
+    font-size: .8em;
+
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
+
+#footer_social {
+    grid-area: social;
+}
+
+#footer_disclaimer {
+    grid-area: disclaimer;
+}
+
+#footer_partners {
+    grid-area: partners;
+}
+
+#footer_nav {
+    grid-area: footer_nav;
+}
+
 
 #site_header {
     color: var(--color-almost-white);
