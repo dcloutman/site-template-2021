@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ page_title | "No Title Given" }}</title>
-        <link rel="stylesheet" href="/static/css/main.css" />
+        <title>{{ page_title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+        <link rel="favicon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
     <body>
-    <header>
+    <header id="site_header">
         <div id="header_grid" class="outer_content_wrapper">
-            <div id="identity">
+            <div id="site_header_identity">
                 <a href="url_for('home')"><img src="{{ url_for('static', filename='/images/logo.png') }}" width="64" height="64" border="0" alt="Logo" /></a>
             </div>
-            <div id="tagline">
+            <div id="site_header_tagline">
                 Some meaningful text here.
             </div>
-            <nav id="page_header_nav">
-                <ul class="horizontal-list">
+            <nav id="site_header_nav">
+                <ul class="flex-list-row">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
@@ -22,8 +23,8 @@
             </nav>
         </div>
     </header>
-    <nav>
-        <ul id="main_nav" class="horizontal-list">
+    <nav id="main_nav">
+        <ul class="flex-list-row">
             <li>Category</li>
             <li>Category</li>
             <li>Category</li>
@@ -71,9 +72,19 @@
     </main>
     <footer>
         <div id="footer_grid" class="outer_content_wrapper">
+            <section class="footer_column" id="footer_column_3">
+                <header>
+                    <h4>Social Media</h4>
+                </header>
+                <ul class="flex-list-row">
+                    <li><a href="#" class="circle-button" style="background-color: #4267B2;">F</a></li>
+                    <li><a href="#" class="circle-button" style="background-color: #1DA1F2;">T</a></li>
+                    <li><a href="#" class="circle-button" style="background-color: #405DE6;">I</a></li>
+                </ul>
+            </section>
             <section class="footer_column" id="footer_column_1">
                 <header>
-                    <h3>Footer Navigation</h3>
+                    <h4>Footer Navigation</h4>
                 </header>
                 <nav>
                     <ul>
@@ -85,17 +96,7 @@
             </section>
             <section class="footer_column" id="footer_column_2">
                 <header>
-                    <h3>Partners Section</h3>
-                </header>
-                <ul>
-                    <li>F</li>
-                    <li>T</li>
-                    <li>Y</li>
-                </ul>
-            </section>
-            <section class="footer_column" id="footer_column_3">
-                <header>
-                    <h3>Section</h3>
+                    <h4>Partners Section</h4>
                 </header>
                 <ul>
                     <li>F</li>
@@ -105,7 +106,7 @@
             </section>
             <section class="footer_column" id="footer_column_4">
                 <header>
-                    <h3>Disclaimer</h3>
+                    <h4>Disclaimer</h4>
                 </header>
                 <p>
                     Sometimes contact information or some legal stipulations get placed here.
