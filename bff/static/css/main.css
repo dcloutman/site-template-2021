@@ -1,103 +1,103 @@
 
 :root {
-	--color-primary: #03c;
-	--color-primary-light: #66f;
-	--color-primary-ultra-light: #eef;
-	--color-primary-dark: #009;
-	--color-primary-ultra-dark: #006;
+    --color-primary: #03c;
+    --color-primary-light: #66f;
+    --color-primary-ultra-light: #eef;
+    --color-primary-dark: #009;
+    --color-primary-ultra-dark: #006;
 
-	--color-almost-black: #030303;
-	--color-almost-white: #f3f3f3;
+    --color-almost-black: #030303;
+    --color-almost-white: #f3f3f3;
 
-	--color-gray-dark: #333;
-	--color-gray-ultra-dark: #0f0f0f;
-	--color-gray: #999;
-	--color-gray-light: #c9c9c9;
-	--color-gray-ultra-light: #e9e9e9;
+    --color-gray-dark: #333;
+    --color-gray-ultra-dark: #0f0f0f;
+    --color-gray: #999;
+    --color-gray-light: #c9c9c9;
+    --color-gray-ultra-light: #e9e9e9;
 
-	--color-link: #03c;
-	--color-link-hover: #03c;
-	--color-link-visited: #609;
+    --color-link: #03c;
+    --color-link-hover: #03c;
+    --color-link-visited: #609;
 
-	--font-primary: Ubuntu, Verdana, Calbri, sans-serif;
-	--font-secondary: Roboto Sans, Ubuntu, Verdana, Calbri, sans-serif;
-	--font-headline: Roboto Sans, Ubuntu, Verdana, Calbri, sans-serif;
+    --font-primary: Ubuntu, Verdana, Calbri, sans-serif;
+    --font-secondary: Roboto Sans, Ubuntu, Verdana, Calbri, sans-serif;
+    --font-headline: Roboto Sans, Ubuntu, Verdana, Calbri, sans-serif;
 }
 
 body {
-	margin: 0;
-	color: var(--color-almost-black);
-	background-color: var(--color-almost-white);
-	font-family: var(--font-primary);
+    margin: 0;
+    color: var(--color-almost-black);
+    background-color: var(--color-almost-white);
+    font-family: var(--font-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: var(--font-headline);
+    font-family: var(--font-headline);
 }
 
 a {
-	text-decoration: none;
-	color: var(--color-link);
+    text-decoration: none;
+    color: var(--color-link);
 }
 
 a:hover {
-	text-decoration: underline;
-	color: var(--color-link-hover);
+    text-decoration: underline;
+    color: var(--color-link-hover);
 }
 
 ul {
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 }
 
 main {
-	min-width: 340px;
-	max-width: 1560px;
+    min-width: 340px;
+    max-width: 1560px;
 
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 footer {
-	background-color: var(--color-gray);
+    background-color: var(--color-gray);
 }
 
 #site_header {
-	color: var(--color-almost-white);
-	background-color: var(--color-primary);
+    color: var(--color-almost-white);
+    background-color: var(--color-primary);
 }
 
 #main_nav {
-	background-color: var(--color-gray);
+    background-color: var(--color-gray);
 }
 
 #main_nav>ul>li {
-	padding: 0 1em;
-	margin: .5em 0;
-	border-right: 2px solid var(--color-gray-light);
+    padding: 0 1em;
+    margin: .5em 0;
+    border-right: 2px solid var(--color-gray-light);
 }
 
 #main_nav>ul>li:last-child {
-	border-right: none;
+    border-right: none;
 }
 
 ul.flex-list-row {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 ul.flex-list-row>li {
-	width: max-content;
+    width: max-content;
 }
 
 a.circle-button {
-	display: block;
-	border: 0;
-	border-radius: 50%;
-	width: 2em;
-	height: 2em;
+    display: block;
+    border: 0;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
 
-	margin-right: .5em;
-	text-align: center;
+    margin-right: .5em;
+    text-align: center;
 }
