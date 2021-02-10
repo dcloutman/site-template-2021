@@ -1,10 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Roboto&family=Roboto+Mono&family=Ubuntu:wght@300;400;500;700&display=swap');
+
 
 :root {
-    --color-primary: #03c;
-    --color-primary-light: #66f;
-    --color-primary-ultra-light: #eef;
+    --site-header-height: 90px;
+
+    /** Blue (Red) **/
+    --color-primary: #03b;
+    --color-primary-light: #33f;
+    --color-primary-ultra-light: #ccf;
     --color-primary-dark: #009;
     --color-primary-ultra-dark: #006;
+
+    --color-splash: #b00;
+    --color-splash-light: #f33;
+    --color-splash-ultra-light: #fcc;
+    --color-splash-dark: #900;
+    --color-splash-ultra-dark: #600;
+
+
+    /** Green (Red) **/
+    /*
+    --color-primary: #0b3;
+    --color-primary-light: #3f3;
+    --color-primary-ultra-light: #cfc;
+    --color-primary-dark: #090;
+    --color-primary-ultra-dark: #060;
+
+    --color-splash: #c30;
+    --color-splash-light: #f33;
+    --color-splash-ultra-light: #fcc;
+    --color-splash-dark: #900;
+    --color-splash-ultra-dark: #600;
+
+    */
+    /** Red (Blue) **/
+    /*
+    --color-primary: #b00;
+    --color-primary-light: #f33;
+    --color-primary-ultra-light: #fcc;
+    --color-primary-dark: #900;
+    --color-primary-ultra-dark: #600;
+
+    --color-splash: #03b;
+    --color-splash-light: #33f;
+    --color-splash-ultra-light: #ccf;
+    --color-splash-dark: #009;
+    --color-splash-ultra-dark: #006;
+    */
 
     --color-almost-black: #030303;
     --color-almost-white: #f3f3f3;
@@ -20,9 +62,11 @@
     --color-link-visited: #609;
 
     --font-primary: Ubuntu, Verdana, Calbri, sans-serif;
-    --font-secondary: Roboto Sans, Ubuntu, Verdana, Calbri, sans-serif;
-    --font-headline: Roboto Sans, Ubuntu, Verdana, Calbri, sans-serif;
+    --font-splash: Roboto, Ubuntu, Verdana, Calbri, sans-serif;
+    --font-headline: 'Big Shoulders Display', cursive;
+    --font-mono: 'Roboto Mono', monospace;
 }
+
 
 body {
     margin: 0;
@@ -33,10 +77,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-headline);
+    margin: 0;
 }
 
 h1 {
     color: var(--color-primary);
+
+    text-shadow: .1em .1em .1em var(--color-gray-light);
 }
 
 h2, h3, h4, h5, h6 {
@@ -60,13 +107,21 @@ ul {
 }
 
 main {
-    min-width: 340px;
+    min-width: 320px;
     max-width: 1560px;
+
+    min-height: calc(100vh - var(--site-header-height));
 
     margin: 0 auto;
 }
 
+#main_wrapper>section {
+    padding: 0 .5em 1.5em .5em;
+}
+
 footer {
+    padding: .5em;
+
     background-color: var(--color-gray);
     color: var(--color-gray-dark);
 
@@ -77,6 +132,8 @@ footer h4 {
     color: var(--color-almost-white);
 
     font-size: 1em;
+    font-weight: 300;
+    font-family: var(--font-splash)
 }
 
 #footer_grid {
@@ -93,6 +150,8 @@ footer h4 {
     grid-area: copyright;
     font-style: normal;
     font-size: .8em;
+
+    text-align: center;
 
     padding-top: 1em;
     padding-bottom: .5em;
@@ -116,12 +175,39 @@ footer h4 {
 
 
 #site_header {
+    height: var(--site-header-height);
     color: var(--color-almost-white);
     background-color: var(--color-primary);
+
+    background: linear-gradient(9deg, var(--color-primary) 34%, var(--color-primary-dark) 93%);
+}
+
+#site_header_grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-rows: 1.8fr .2fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "logo site_header_nav"
+        "tagline site_header_nav";
+}
+
+#site_header_identity {
+    grid-area: logo;
+}
+
+#site_header_tagline {
+    grid-area: tagline;
+}
+
+#site_header_nav {
+    grid-area: site_header_nav;
+    text-align: right;
 }
 
 #main_nav {
     background-color: var(--color-gray);
+    box-shadow: inset var(--color-primary-ultra-light) 0 -2px 2px;
 }
 
 #main_nav>ul>li {
@@ -132,6 +218,38 @@ footer h4 {
 
 #main_nav>ul>li:last-child {
     border-right: none;
+}
+
+#page_header {
+    background-color: var(--color-primary-ultra-light);
+    padding: .5em .5em 1em .5ex;
+    background: linear-gradient(173deg, var(--color-primary-ultra-light) 55%, var(--color-almost-white) 93%);
+}
+
+#content_introduction {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 150%;
+    padding-bottom: 1.1em;
+}
+
+#page_aside {
+    width: 25%;
+    font-size: 2em;
+    font-style: italic;
+    padding: 1em;
+    margin: 1em;
+    float: right;
+    background-color: var(--color-splash-light);
+    background: linear-gradient(165deg, var(--color-primary-light) 25%, var(--color-gray-ultra-light) 100%);
+    clear: none;
+    box-shadow: 2px 2px 4px var(--color-gray), -2px -2px 4px var(--color-gray-light);
+}
+
+@media screen and (max-width: 640px) {
+    #page_aside {
+        display: none;
+    }
 }
 
 ul.flex-list-row {

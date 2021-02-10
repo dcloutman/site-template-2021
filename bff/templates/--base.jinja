@@ -3,22 +3,23 @@
     <head>
         <title>{{ page_title }}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
-        <link rel="favicon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     </head>
     <body>
     <header id="site_header">
-        <div id="header_grid" class="outer_content_wrapper">
+        <div id="site_header_grid" class="outer_content_wrapper">
             <div id="site_header_identity">
                 <a href="url_for('home')"><img src="{{ url_for('static', filename='/images/logo.png') }}" width="64" height="64" border="0" alt="Logo" /></a>
             </div>
             <div id="site_header_tagline">
-                Some meaningful text here.
+                A starting point.
             </div>
             <nav id="site_header_nav">
                 <ul class="flex-list-row">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,7 +34,7 @@
         </ul>
     </nav>
     <main>
-        <div id="body_grid" class="outer_content_wrapper">
+        <div id="main_wrapper" class="outer_content_wrapper">
             <header id="page_header">
             {% block page_header %}
                 <h1 id="page_headline">{{ page_headline }}</h1>
@@ -43,17 +44,20 @@
             {% if show_page_aside %}
                 <aside id="page_aside">
                 {% block page_aside %}
-                    &lquote; Catchy quote goes here. &rquote;
+                    &ldquo; Catchy quote goes here. &rdquo;
                 {% endblock %}
                 </aside>
             {% endif %}
+            <section id="content_introduction">
+                <strong>Big bold words make a fresh impact.</strong> A broad overview engages your audience. Everything seems just a litle bigger as the content of a new page rises from the ash-heap of ignorance.
+            </section>
             <section>
                 <header>
-                    <h2>Text Section</h2>
+                    <h2>Blog Post</h2>
                 </header>
-                <p>This is some <strong>hot blog post</strong>. You have to read it. You know you want to.</p>
-                <p>There sure is <em>a lot of detail</em> here. Let's learn more. I could go on and on, but I won't.</p>
-                <p>Wow, what a meaningful conclusion. That was great.</p>
+                <p>This is a <strong>hot blog post</strong> that you have to read. You can't stop reading it. You know you want to keep reading it forever. If only you could. It is that incredible.</p>
+                <p>There sure is <em>a lot of detail</em> here. Let's learn more. Details, factoids, and the unvarnished truth are all expounded upon, here. It could and go on and on and go on and on and go on and on and then go on some more and then go on and go on and on and go on and on, but it won't.</p>
+                <p>Wow, what a powerful conclusion; impactful and relevant. My life has new meaning thanks to this blog post. That was great.</p>
             </section>
             <section>
                 <header>
