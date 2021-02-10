@@ -9,7 +9,7 @@
     <header id="site_header">
         <div id="site_header_grid" class="outer_content_wrapper">
             <div id="site_header_identity">
-                <a href="url_for('home')"><img src="{{ url_for('static', filename='/images/logo.png') }}" width="64" height="64" border="0" alt="Logo" /></a>
+                <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='/images/logo.png') }}" width="64" height="64" border="0" alt="Logo" style="border-radius: 50%;background-color: #fff; width: 64px; height: 64px;" /></a>
             </div>
             <div id="site_header_tagline">
                 A starting point.

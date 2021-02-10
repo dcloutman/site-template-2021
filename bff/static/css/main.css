@@ -2,7 +2,7 @@
 
 
 :root {
-    --site-header-height: 90px;
+    --site-header-height: 100px;
 
     /** Blue (Red) **/
     --color-primary: #03b;
@@ -194,15 +194,32 @@ footer h4 {
 
 #site_header_identity {
     grid-area: logo;
+    padding: .5em 0 0 .5em;
 }
 
 #site_header_tagline {
     grid-area: tagline;
+    padding-left: .5em;
 }
 
 #site_header_nav {
     grid-area: site_header_nav;
     text-align: right;
+    padding-top: 1em;
+}
+
+#site_header_nav>ul>li {
+    padding: 0 .5em;
+    border-right: 1px solid var(--color-gray-light);
+}
+
+#site_header_nav>ul>li:last-child {
+    padding: 0 0 0 .5em;
+    border-right: none;
+}
+
+#site_header_nav a, #site_header_nav a:visited {
+    color: var(--color-almost-white);
 }
 
 #main_nav {
