@@ -1,1 +1,32 @@
 {% extends "--base.jinja" %}
+{% block content %}
+<div class="grid-container-2-1" style="padding-left: 1em;">
+    <section>
+        <header>
+            <h2>Reach out to us</h2>
+        </header>
+        <p>
+            <form src="{{ url_for('send_message') }}">
+                <label for="">Name</label> <input type="text" value="" name="" /><br />
+                <label for="">Email</label> <input type="text" value="" name="" /><br />
+                <label for="">Phone</label> <input type="text" value="" name="" /><br>
+                <label for="">Purpose</label> <input type="text" value="" name="" /><br />
+
+                <label for="">Message</label><br />
+                <textarea></textarea><br>
+                <button type="submit">Send</button>
+            </form>
+        </p>
+    </section>
+    <section>
+        <header>
+            <h2>Locations</h2>
+        </header>
+        <p>
+            <h3>Headquarters</h3>
+            123 Fake St.<br />
+            Anytown, XY 00000-0000
+        </p>
+    </section>
+</div>
+{% endblock %}

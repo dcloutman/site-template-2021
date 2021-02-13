@@ -1,1 +1,95 @@
 {% extends "--base.jinja" %}
+
+{% block page_style %}
+    #leadership_grid {
+        margin: 1em;
+    }
+
+    #leadership_grid {
+        text-align: justify;
+
+        font-size: .8em;
+    }
+
+    #leadership_grid>figure {
+        padding: 0 1em 0 1em;
+        border-right: 1px solid var(--color-gray);
+    }
+
+    #leadership_grid>figure:last-child {
+        border-right: none;
+    }
+
+    @media screen and (max-width: 680px) {
+        #leadership_grid {
+            display: block;
+            border-width: 0 1px 0 1px;
+            border-color: var(--color-gray);
+            border-style: solid;
+        }
+
+        #leadership_grid>figure {
+            border: none;
+        }
+    }
+
+    @media screen and (min-width: 1080px) {
+    	#leadership_grid {
+    		width: 1000px;
+    		margin: 0 auto;
+    	}
+    }
+
+{% endblock %}
+
+{% block content %}
+<section id="content_introduction">
+    Many <strong>people</strong> like us. They're not stupid, they're just naive. A broad spectrum of public opinion is at odds with the truth. Everything seems just a litle more bizzare as the content of a new page rises from the ash-heap of ignorance.
+</section>
+<section>
+    <header>
+        <h2>Our Leaders</h2>
+    </header>
+    <p>Control has sent three of its finest to police our firm. Only the insane question their authority.They say things that baffle us. Their ponderings are beyond our control. We're not certain what to do about them when they embarrass us in the media. Sometimes we fear them. Sometimes we love them. Always, we remain loyal and obedient to their commands.</p>
+    <div id="leadership_grid" class="grid-container-3-1">
+        <figure class="grid-item-1">
+            <div>
+                <img src="{{ url_for('static', filename='images/icosidodecahedron.gif') }}" border="0" style="width: 100%; height: auto" />
+            </div>
+            <caption>
+                <strong>Fringe Lunatic</strong> is not a being to be trifled with. When he was 8 years old, he became the youngest organized crime syndicate boss ever at Ethical Society. During his second year at Harvard he learned to not blink and still sleeps precisely two hours every night. He and his wife keep an exotic cat in violation of their homeowners' associations' bylaws and covenents.
+            </caption>
+        </figure>
+        <figure class="grid-item-2">
+            <div>
+                <img src="{{ url_for('static', filename='images/tetrahedron.gif') }}" border="0" style="width: 100%; height: auto" />
+            </div>
+            <caption>
+                <strong>Boring Person</strong> does not have time to like you or dislike you. She requires your timesheet on time every week. Do not fail her again on punctual timesheets. Tardiness is the sign of a disorganized mind. Her favorite color is gray. She despises sparkles and pieces of flair which she asserts are coping mechanisms for the inept. If you steal from her desk, she will literally eat you.
+            </caption>
+        </figure>
+        <figure class="grid-item-3">
+            <div>
+                <img src="{{ url_for('static', filename='images/octahedron.gif') }}" border="0" style="width: 100%; height: auto" />
+            </div>
+            <caption>
+                <strong>Homogenized Authority Figure</strong> has very strong opinions about how much he likes you and wants you to succeed. His working hours are 7:30am-4:30pm. Do not email him outside of this timeframe. He has little time for hobbies. Family game night ends after two hours, whether the game is finished or not, so that everyone is a winner. This man will destroy you.
+            </caption>
+        </figure>
+    </div>
+</section>
+<section>
+    <header>
+        <h2>Our Team</h2>
+    </header>
+    <p>We are happy, oh so happy. Few of us dare to speak our minds. We are a complacent and complient workforce. We have health insurance. We love you.</p>
+    <p>Many kind things do we say about our leaders. They give us ping pong and beer once a month. We do not question their motives. The bathrooms are kept clean. There is a minimally invasive parking structure. These things can be taken from us. Smile.</p>
+</section>
+<section>
+    <header>
+        <h2>Advisors and Investors</h2>
+    </header>
+    <p>We know not where they are from. They are vauge in speech and can only be seen from certain angles.</p>
+    <p>Tentacles dangle from the sky. They are beautiful All hail the Great Old Ones.</p>
+</section>
+{% endblock %}

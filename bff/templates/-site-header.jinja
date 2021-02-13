@@ -1,0 +1,16 @@
+<div id="site_header_grid" class="outer_content_wrapper">
+    <div id="site_header_identity">
+        <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='/images/logo.png') }}" width="64" height="64" border="0" alt="Logo" style="border-radius: 50%; background-color: #fff; width: 64px; height: 64px;" /></a>
+    </div>
+    <div id="site_header_tagline">
+        A starting point.
+    </div>
+    <nav id="site_header_nav">
+        <ul class="flex-list-row">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        </ul>
+    </nav>
+</div>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Roboto&family=Roboto+Mono&family=Ubuntu:wght@300;400;500;700&display=swap');
 
+/*
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bitter:ital,wght@0,400;0,500;0,700;1,300&family=Stalinist+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonbon&family=Crafty+Girls&family=Lato&display=swap');
+*/
 
 :root {
     --site-header-height: 100px;
@@ -61,10 +65,29 @@
     --color-link-hover: #03c;
     --color-link-visited: #609;
 
-    --font-primary: Ubuntu, Verdana, Calbri, sans-serif;
-    --font-splash: Roboto, Ubuntu, Verdana, Calbri, sans-serif;
-    --font-headline: 'Big Shoulders Display', cursive;
+
+    /** All business. */
+    --font-primary: Roboto, Ubuntu, Verdana, Calbri, sans-serif;
+    --font-splash: Ubuntu, Verdana, Calbri, sans-serif;
+    --font-headline: 'Big Shoulders Display', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
+
+    
+    /** Dystopia */
+    /*
+    --font-primary: 'Bitter', serif;
+    --font-splash: 'Architects Daughter', sans-serif;
+    --font-headline: 'Stalinist One', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    */
+
+    /** Charm */
+    /*
+    --font-primary: 'Lato', sans-serif;
+    --font-headline: 'Bonbon', cursive;
+    --font-splash: 'Crafty Girls', cursive;
+    --font-mono: 'Roboto Mono', monospace;
+    */
 }
 
 
@@ -82,7 +105,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     color: var(--color-primary);
+    text-shadow: .1em .1em .2em var(--color-gray);
+    letter-spacing: .4em
+}
 
+h2 {
+    letter-spacing: .1em;
     text-shadow: .1em .1em .1em var(--color-gray-light);
 }
 
@@ -106,6 +134,11 @@ ul {
     list-style-type: none;
 }
 
+figure {
+    margin: 0;
+    padding: 0;
+}
+
 main {
     min-width: 320px;
     max-width: 1560px;
@@ -116,7 +149,7 @@ main {
 }
 
 #main_wrapper>section {
-    padding: 0 .5em 1.5em .5em;
+    padding: 1em .5em 1.5em .5em;
 }
 
 footer {
@@ -200,6 +233,7 @@ footer h4 {
 #site_header_tagline {
     grid-area: tagline;
     padding-left: .5em;
+    text-shadow: 1px 1px 3px var(--color-primary-light);
 }
 
 #site_header_nav {
@@ -237,6 +271,10 @@ footer h4 {
     border-right: none;
 }
 
+main section p {
+    text-align: justify;
+}
+
 #page_header {
     background-color: var(--color-primary-ultra-light);
     padding: .5em .5em 1em .5ex;
@@ -248,12 +286,29 @@ footer h4 {
     font-weight: 300;
     line-height: 150%;
     padding-bottom: 1.1em;
+
+    text-shadow: var(--color-gray-light) 1px 1px 3px;
+
+    text-align: justify;
+    text-justify: inter-character;
+    word-spacing: .2em;
+}
+
+#content_introduction:first-line {
+    font-weight: 400;
+}
+
+#content_introduction strong {
+    font-weight: 700;
+}
+
+#content_introduction:first-line strong {
+    font-weight: 400;
 }
 
 #page_aside {
+    position: relative;
     width: 25%;
-    font-size: 2em;
-    font-style: italic;
     padding: 1em;
     margin: 1em;
     float: right;
@@ -261,6 +316,32 @@ footer h4 {
     background: linear-gradient(165deg, var(--color-primary-light) 25%, var(--color-gray-ultra-light) 100%);
     clear: none;
     box-shadow: 2px 2px 4px var(--color-gray), -2px -2px 4px var(--color-gray-light);
+}
+
+/** 
+ Background image opacity hack.
+ */
+#page_aside::before {
+    content: "";
+    background-image: url('../images/paper-clip.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+}
+
+#page_aside_wrapper {
+    position: relative;
+    color: var(--color-almost-white);
+
+    font-family: var(--font-splash);
+    font-size: 2em;
+    font-style: italic;
+
+    text-shadow: var(--color-primary-light) .1em .1em .5em;
 }
 
 @media screen and (max-width: 640px) {
@@ -288,4 +369,22 @@ a.circle-button {
 
     margin-right: .5em;
     text-align: center;
+}
+
+.grid-container-2-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". . .";
+}
+
+.grid-container-3-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". . .";
 }

@@ -15,6 +15,10 @@ def about():
 def contact():
 	return render_template("contact.jinja", page_headline="Contact Us")
 
+@app.route('/contact/send-message')
+def send_message():
+	return "Send message."
+	
 @app.route('/products')
 def products():
 	return "Products"
@@ -22,5 +26,6 @@ def products():
 @app.route('/login')
 def login():
 	return "Login"
+
 if __name__ == "app.py":
 	app.run()
