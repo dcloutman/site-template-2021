@@ -388,3 +388,63 @@ a.circle-button {
     grid-template-areas:
         ". . .";
 }
+
+
+
+/** Overlays */
+#overlay_sticker {
+    display: none;
+    position: sticky;
+    top: 0px;
+    z-index: 999997;
+    height: 0;
+}
+
+/** 
+    OVERLAYS: Activate overlay with classes on body tag. 
+    Email overlay: class="active_overlay email_signup";
+*/
+body.active_overlay #overlay_sticker {
+    display: block;
+}
+
+/* Hide all scrollbars on body when overlay is active. */
+body.active_overlay {
+    overflow-x: hidden;
+    overflow-y: hidden; 
+}
+
+body.active_overlay.email_signup #overlay_content_email_signup {
+    display: block;
+}
+
+#overlay_background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999998;
+    background-color: var(--color-gray-light);
+    opacity: 75%;
+}
+
+#overlay_content_email_signup {
+    display: none;
+    position:absolute;
+    z-index: 999999;
+    top: calc(50vh - 85px);
+    left: calc(50vw - 170px);
+    width: 340px;
+    max-height: 340px;
+    opacity: 100%;
+    background-color: var(--color-almost-white);
+    overflow: hidden;
+    padding: 1em;
+}
+
+#overlay_content_email_signup>header {
+    font-family: var(--font-headline);
+    font-size: 1.2em;
+}
