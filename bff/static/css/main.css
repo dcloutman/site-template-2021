@@ -37,6 +37,7 @@
     --color-splash-ultra-dark: #600;
 
     */
+
     /** Red (Blue) **/
     /*
     --color-primary: #b00;
@@ -90,6 +91,11 @@
     */
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 body {
     margin: 0;
@@ -400,10 +406,37 @@ a.circle-button {
     height: 0;
 }
 
+.boring-button {
+    border: 1px dotted var(--color-gray-light);
+    color: var(--color-gray-light);
+}
+
+.boring-button:hover {
+    color: #fff;
+    background-color: var(--color-splash);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.blurry_face {
+    color: transparent;
+    text-shadow: 0 0 3px var(--color-almost-black);
+}
+
+.blurry_face h1 {
+    color: transparent;
+    text-shadow: 0 0 5px var(--color-primary);
+}
+
+.blurry_face h2 {
+    color: transparent;
+    text-shadow: 0 0 4px var(--color-gray-dark);
+}
+
 /** 
-    OVERLAYS: Activate overlay with classes on body tag. 
-    Email overlay: class="active_overlay email_signup";
-*/
+ *  OVERLAYS: Activate overlay with classes on body tag. 
+ *  Email overlay: class="active_overlay email_signup";
+ */
 body.active_overlay #overlay_sticker {
     display: block;
 }
@@ -427,6 +460,7 @@ body.active_overlay.email_signup #overlay_content_email_signup {
     width: 100vw;
     z-index: 999998;
     background-color: var(--color-gray-light);
+    background-image: linear-gradient(transparent, var(--color-almost-white));
     opacity: 75%;
 }
 
@@ -439,12 +473,24 @@ body.active_overlay.email_signup #overlay_content_email_signup {
     width: 340px;
     max-height: 340px;
     opacity: 100%;
-    background-color: var(--color-almost-white);
     overflow: hidden;
     padding: 1em;
+
+    /* Override .blurry_face. */
+    color: var(--color-almost-black);
+    text-shadow: none;    
+    background-color: var(--color-almost-white);
 }
 
 #overlay_content_email_signup>header {
     font-family: var(--font-headline);
     font-size: 1.2em;
 }
+
+#overlay_content_email_signup_close_button {
+    display: block;
+    width: 1em;
+    line-height: 1em;
+    padding: 0 0 3px 0;
+}
+
