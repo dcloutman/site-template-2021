@@ -1,4 +1,29 @@
 {% extends "--base.jinja" %}
+{% block page_style %}
+    .input_grid_container {
+        display: grid;
+        grid-template-columns: min-content max-content;
+        grid-template-rows: repeat(5);
+    }
+
+    .input_grid_container>div {
+        padding: 0 .5em .2em 0;
+    }
+
+    .input_grid_container label {
+        font-weight: bold;
+        font-size: .8em;
+    }
+
+    .input_grid_container input, .input_grid_container select, .input_grid_container textarea {
+        width: 40vw;
+    }
+
+    .input_grid_container textarea {
+        height: 30vw;
+        max-height: 200px;
+    }
+{% endblock %}
 {% block content %}
 <div class="grid-container-2-1" style="padding-left: 1em;">
     <section>
@@ -6,15 +31,44 @@
             <h2>Reach out to us</h2>
         </header>
         <p>
-            <form src="{{ url_for('send_message') }}">
-                <label for="">Name</label> <input type="text" value="" name="" /><br />
-                <label for="">Email</label> <input type="text" value="" name="" /><br />
-                <label for="">Phone</label> <input type="text" value="" name="" /><br>
-                <label for="">Purpose</label> <input type="text" value="" name="" /><br />
+            <form id="page_send_message_form" src="{{ url_for('send_message') }}">
+                <div class="input_grid_container">
+                    <div class="label">
+                        <label for="">Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" value="" name="" />
+                    </div>
+                    <div class="label">
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" value="" name="" />
+                    </div>
+                    <div class="label">
+                        <label for="">Phone</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" value="" name="" /><br>
+                    </div>
+                    <div class="label">
+                        <label for="">Purpose</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" value="" name="" />
+                    </div>
+                    <div class="label">
+                        <label for="">Message</label>
+                    </div>
+                    <div class="input">
+                        <textarea></textarea>
+                    </div>
+                    <div>&#160;</div>
+                    <div style="text-align: center;">
+                        <button type="submit">Send</button>
+                    </div>
+                </div>
 
-                <label for="">Message</label><br />
-                <textarea></textarea><br>
-                <button type="submit">Send</button>
             </form>
         </p>
     </section>
