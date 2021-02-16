@@ -17,21 +17,39 @@
 
     .input_grid_container input, .input_grid_container select, .input_grid_container textarea {
         width: 40vw;
+        max-width: 400px;
     }
 
     .input_grid_container textarea {
         height: 30vw;
         max-height: 200px;
     }
+
+    @media screen and (max-width: 440px) {
+        #page_content_grid {
+            display: block;
+        }
+
+        .input_grid_container input, .input_grid_container select, .input_grid_container textarea {
+            width: 250px;
+        }
+
+    }
+
+    @media screen and (max-width: 480px) {
+        .input_grid_container {
+            display: block;
+        }
+    }
 {% endblock %}
 {% block content %}
-<div class="grid-container-2-1" style="padding-left: 1em;">
+<div id="page_content_grid" class="grid-container-2-1" style="padding-left: 1em;">
     <section>
         <header>
             <h2>Reach out to us</h2>
         </header>
         <p>
-            <form id="page_send_message_form" src="{{ url_for('send_message') }}">
+            <form id="page_send_message_form" src="{{ url_for('contact_process_form') }}" method="post">
                 <div class="input_grid_container">
                     <div class="label">
                         <label for="">Name</label>
