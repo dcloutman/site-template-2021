@@ -89,6 +89,56 @@
     --font-splash: 'Crafty Girls', cursive;
     --font-mono: 'Roboto Mono', monospace;
     */
+
+    /** 
+      * Icon style config. Example source images are 512x512. Square icon images are
+      * recommended. Replace images with your own or follow attribution guidance in
+      * /bff/static/images/examples/README.md.
+      *
+      * Sizes:
+      * * xsm : exra-small
+      * * sm  : small
+      * * med : medium
+      * * lg  : large
+      */
+
+    --icon-width-xsm : 24px;
+    --icon-height-xsm : 24px;
+    --icon-frame-width-xsm : 2px;
+    --icon-frame-height-xsm : 2px;
+
+    --icon-width-sm : 32px;
+    --icon-height-sm : 32px;
+    --icon-frame-width-sm : 4px;
+    --icon-frame-height-sm : 4px;
+
+    --icon-width-med : 48px;
+    --icon-height-med: 48px;
+    --icon-frame-width-med : 6px;
+    --icon-frame-height-med: 6px;
+
+    --icon-width-lg : 64px;
+    --icon-height-lg : 64px;
+    --icon-frame-width-lg : 8px;
+    --icon-frame-height-lg : 8px;
+
+    --icon-width-xlg : 128px;
+    --icon-height-xlg : 128px;
+    --icon-frame-width-xlg : 8px;
+    --icon-frame-height-xlg : 8px;
+
+    --icon-width-xxlg : 256px;
+    --icon-height-xxlg : 256px;
+    --icon-frame-width-xxlg : 8px;
+    --icon-frame-height-xxlg : 8px;
+
+    --icon-width-xxxlg : 512px;
+    --icon-height-xxxlg : 512px;
+    --icon-frame-width-xxxlg : 8px;
+    --icon-frame-height-xxxlg : 8px;
+
+    --icon-background-image-blend-mode: normal;
+    --icon-background-image-blend-mode-hover: color;
 }
 
 .clearfix::after {
@@ -396,9 +446,8 @@ a.circle-button {
 }
 
 
-
 /** Overlays */
-#overlay_sticker {
+#lightbox_sticker {
     display: none;
     position: sticky;
     top: 0px;
@@ -434,24 +483,24 @@ a.circle-button {
 }
 
 /** 
- *  OVERLAYS: Activate overlay with classes on body tag. 
- *  Email overlay: class="active_overlay email_signup";
+ *  LIGHTBOX: Activate lightbox with classes on body tag. 
+ *  Email lightbox: class="active_lightbox email_signup";
  */
-body.active_overlay #overlay_sticker {
+body.active_lightbox #lightbox_sticker {
     display: block;
 }
 
-/* Hide all scrollbars on body when overlay is active. */
-body.active_overlay {
+/* Hide all scrollbars on body when lightbox is active. */
+body.active_lightbox {
     overflow-x: hidden;
     overflow-y: hidden; 
 }
 
-body.active_overlay.email_signup #overlay_content_email_signup {
+body.active_lightbox.email_signup #lightbox_content_email_signup {
     display: block;
 }
 
-#overlay_background {
+#lightbox_background {
     display: block;
     position: absolute;
     top: 0;
@@ -464,7 +513,7 @@ body.active_overlay.email_signup #overlay_content_email_signup {
     opacity: 75%;
 }
 
-#overlay_content_email_signup {
+#lightbox_content_email_signup {
     display: none;
     position:absolute;
     z-index: 999999;
@@ -476,21 +525,196 @@ body.active_overlay.email_signup #overlay_content_email_signup {
     overflow: hidden;
     padding: 1em;
 
+    box-shadow: 2px 2px 5px var(--color-almost-black);
+
     /* Override .blurry_face. */
     color: var(--color-almost-black);
     text-shadow: none;    
     background-color: var(--color-almost-white);
 }
 
-#overlay_content_email_signup>header {
+#lightbox_content_email_signup input {
+    border: 2px solid var(--color-primary);
+    box-shadow: 1px 1px 3px var(--color-gray);
+}
+
+#lightbox_content_email_signup>header {
     font-family: var(--font-headline);
     font-size: 1.2em;
 }
 
-#overlay_content_email_signup_close_button {
+#lightbox_content_email_signup_close_button {
     display: block;
     width: 1em;
     line-height: 1em;
     padding: 0 0 3px 0;
 }
+
+
+.icon_xsm, .icon_sm, .icon_med, .icon_lg, .icon_xlg, .icon_xxlg, .icon_xxxlg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: var(--color-primary);
+    background-blend-mode: var(--icon-background-image-blend-mode);
+}
+
+.icon_xsm:hover, .icon_sm:hover, .icon_med:hover, .icon_lg:hover, .icon_xlg:hover, .icon_xxlg:hover, .icon_xxxlg:hover {
+    background-color: var(--color-primary-light);
+    cursor: pointer;
+    background-blend-mode: var(--icon-background-image-blend-mode-hover);
+}
+
+.icon_xsm {
+    display: inline-block;
+    width: var(--icon-width-xsm);
+    height: var(--icon-height-xsm);
+
+    background-size: calc(var(--icon-width-xsm) - var(--icon-frame-width-xsm)) calc(var(--icon-height-xsm) - var(--icon-frame-height-xsm));
+}
+
+.icon_sm {
+    display: inline-block;
+    width: var(--icon-width-sm);
+    height: var(--icon-height-sm);
+
+    background-size: calc(var(--icon-width-sm) - var(--icon-frame-width-sm)) calc(var(--icon-height-sm) - var(--icon-frame-height-sm));
+}
+
+.icon_med {
+    display: inline-block;
+    width: var(--icon-width-med);
+    height: var(--icon-height-med);
+
+    background-size: calc(var(--icon-width-med) - var(--icon-frame-width-med)) calc(var(--icon-height-med) - var(--icon-frame-height-med));
+}
+
+.icon_lg {
+    display: inline-block;
+    width: var(--icon-width-lg);
+    height: var(--icon-height-lg);
+
+    background-size: calc(var(--icon-width-lg) - var(--icon-frame-width-lg)) calc(var(--icon-height-lg) - var(--icon-frame-height-lg));    
+}
+
+.icon_xlg {
+    display: inline-block;
+    width: var(--icon-width-xlg);
+    height: var(--icon-height-xlg);
+
+    background-size: calc(var(--icon-width-xlg) - var(--icon-frame-width-xlg)) calc(var(--icon-height-xlg) - var(--icon-frame-height-xlg));    
+}
+
+.icon_xxlg {
+    display: inline-block;
+    width: var(--icon-width-xxlg);
+    height: var(--icon-height-xxlg);
+
+    background-size: calc(var(--icon-width-xxlg) - var(--icon-frame-width-xxlg)) calc(var(--icon-height-xxlg) - var(--icon-frame-height-xxlg));    
+}
+
+
+.icon_avatar {
+    background-image: url('/static/images/examples/icons/avatar.png');
+}
+
+.icon_avatar:hover {
+}
+
+
+.icon_cancel {
+    background-image: url('/static/images/examples/icons/cancel.png');
+}
+
+.icon_cancel:hover {
+}
+
+
+.icon_chat {
+    background-image: url('/static/images/examples/icons/chat.png');
+}
+
+.icon_chat:hover {
+}
+
+
+.icon_copy {
+    background-image: url('/static/images/examples/icons/copy.png');
+}
+
+.icon_copy:hover {}
+
+
+.icon_edit {
+    background-image: url('/static/images/examples/icons/edit.png');
+}
+
+.icon_edit:hover {}
+
+
+.icon_folder {
+    background-image: url('/static/images/examples/icons/folder.png');
+}
+
+.icon_folder:hover {}
+
+
+.icon_garbage {
+    background-image: url('/static/images/examples/icons/garbage.png');
+}
+
+.icon_garbage:hover {}
+
+
+.icon_heart {
+    background-image: url('/static/images/examples/icons/heart.png');
+}
+
+.icon_heart:hover {}
+
+
+.icon_house {
+    background-image: url('/static/images/examples/icons/house.png');
+}
+
+.icon_house:hover {}
+
+
+.icon_link {
+    background-image: url('/static/images/examples/icons/link.png');
+}
+
+.icon_link:hover {}
+
+
+.icon_logout {
+    background-image: url('/static/images/examples/icons/logout.png');
+}
+
+.icon_logout:hover {}
+
+
+.icon_share {
+    background-image: url('/static/images/examples/icons/share.png');
+}
+
+.icon_share:hover {}
+
+
+.icon_shopping_cart {
+    background-image: url('/static/images/examples/icons/shopping-cart.png');
+}
+
+.icon_shopping_cart:hover {}
+
+
+.icon_phone_call {
+    background-image: url('/static/images/examples/icons/phone-call.png');
+}
+
+.icon_phone_call:hover {}
+
+
+
+
+
 
