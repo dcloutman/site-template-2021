@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>{{ page_title }}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
         <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
         <script language="javascript" type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
@@ -11,8 +13,8 @@
         </style>
     </head>
     <body>
-    {% block overlay %}
-        {% include "-email-overlay.jinja" %}
+    {% block lightbox %}
+        {% include "-email-lightbox.jinja" %}
     {% endblock %}
     <header id="site_header">
     {% block site_header %}
@@ -25,14 +27,14 @@
             <li>Category</li>
             <li>Category</li>
             <li>Category</li>
-            <li>Category</li>
+            <li><a href="{{ url_for("icons") }}">Icons</a></li>
         </ul>
     </nav>
     <main>
         <div id="main_wrapper" class="outer_content_wrapper">
             <header id="page_header">
             {% block page_header %}
-                <h1 id="page_headline">{{ page_headline }}</h1>
+                <h1 id="page_headline">{% block page_headline %}{{ page_headline }}{% endblock %}</h1>
             {% endblock %}
             </header>
 
