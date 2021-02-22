@@ -41,6 +41,9 @@
     }
 
 {% endblock %}
+{%block page_headline %}
+    About Us
+{% endblock %}
 
 {% block content %}
 <section id="content_introduction">
@@ -56,10 +59,10 @@
     <div id="leadership_grid" class="grid-container-3-1">
         <figure class="grid-item-1">
             <div>
-                <img src="{{ url_for('static', filename='images/icosidodecahedron.gif') }}" border="0" style="width: 100%; height: auto" />
+                <img src="{{ url_for('static', filename='images/examples/rotating-solids/icosidodecahedron.gif') }}" border="0" style="width: 100%; height: auto" />
             </div>
             <caption>
-                <strong>John Doe: Founder and CEO</strong> started his first business at the age of 8. He provides important leadership and vision to Organization. John Earned holds an MBA from Harvard. He is interested in wildlife and social causes.
+                <strong>John Doe: Founder and CEO</strong> started his first business at the age of 8. He provides important leadership and vision to Organization. John  holds an MBA from Harvard. He is interested in wildlife and social causes.
             </caption>
         </figure>
         <figure class="grid-item-2">
@@ -75,7 +78,7 @@
                 <img src="{{ url_for('static', filename='images/octahedron.gif') }}" border="0" style="width: 100%; height: auto" />
             </div>
             <caption>
-                <strong>Dale Dinglethorp: Chief Success Officer</strong> has very strong opinions about how much he likes you and wants you to succeed. Dale Holds a masters in Organizational Psychology from Brand Name University. Dale has no known hobbies.
+                <strong>Dale Dinglethorp: Chief Success Officer</strong> has very strong opinions about how much he likes you and wants you to succeed. Dale Holds a PhD in Organizational Psychology from Brand Name University. Dale has no known hobbies.
             </caption>
         </figure>
     </div>

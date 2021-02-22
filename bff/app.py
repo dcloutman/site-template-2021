@@ -6,31 +6,35 @@ app = Flask(__name__)
 
 @app.route('/')
 def home ():
-	return render_template("home.jinja", page_headline="Site Template 2021", show_page_aside=True)
+    return render_template("home.jinja", show_page_aside=True)
 
 @app.route('/about')
 def about():
-	return render_template("about.jinja", page_headline="About Us")
+    return render_template("about.jinja")
 
 @app.route('/contact', methods=['GET'])
 def contact():
-	return render_template("contact.jinja", page_headline="Contact Us")
+    return render_template("contact.jinja")
 
 @app.route('/contact', methods=['POST'])
 def contact_process_form():
-	return '0'
+    return '0'
 
 @app.route('/contact/send-message')
 def send_message():
-	return "Send message."
-	
+    return "Send message."
+
 @app.route('/products')
 def products():
-	return "Products"
+    return "Products"
+
+@app.route('/icons')
+def icons():
+    return render_template("icons.jinja")
 
 @app.route('/login')
 def login():
-	return "Login"
+    return "Login"
 
 if __name__ == "app.py":
-	app.run()
+    app.run()
