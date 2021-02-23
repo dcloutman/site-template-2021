@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from bff.views.contact_view import ContactView
 import smtplib
 
 app = Flask(__name__)
@@ -12,13 +13,7 @@ def home ():
 def about():
     return render_template("about.jinja")
 
-@app.route('/contact', methods=['GET'])
-def contact():
-    return render_template("contact.jinja")
-
-@app.route('/contact', methods=['POST'])
-def contact_process_form():
-    return '0'
+ContactView.register(app)
 
 @app.route('/contact/send-message')
 def send_message():

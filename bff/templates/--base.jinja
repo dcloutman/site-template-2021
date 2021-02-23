@@ -70,7 +70,7 @@
                 <nav>
                     <ul>
                         <li><a href="{{ url_for('about') }}">About</a></li>
-                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a href="{{ url_for('ContactView:index') }}">Contact</a></li>
                         <li><a href="{{ url_for('products') }}">Products</a></li>
                     </ul>
                 </nav>
@@ -95,7 +95,7 @@
             </section>
 
             <address id="footer_copyright">
-                &copy; 2021 David Cloutman
+                {% include "-copyright.jinja" %}
             </address>
         </div>
     </footer>
