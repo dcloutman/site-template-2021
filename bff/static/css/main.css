@@ -184,6 +184,14 @@ a:hover {
     color: var(--color-link-hover);
 }
 
+a:visited {
+    color: var(--color-link-visited);
+}
+
+a.not_visited:visited {
+    color: var(--color-link);
+}
+
 ul {
     padding: 0;
     margin: 0;
@@ -480,6 +488,15 @@ a.circle-button {
 .blurry_face h2 {
     color: transparent;
     text-shadow: 0 0 4px var(--color-gray-dark);
+}
+
+.blurry_face h3, .blurry_face h4, .blurry_face h5, .blurry_face h6 {
+    color: transparent;
+    text-shadow: 0 0 3px var(--color-gray-dark);    
+}
+
+.blurry_face img {
+    blur(4px);
 }
 
 /** 
