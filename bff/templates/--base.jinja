@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ page_title }}</title>
+        <title>
+            {% block page_title %}
+                {{ page_title }}
+            {% endblock %}
+        </title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
@@ -27,7 +31,7 @@
             <li>Category</li>
             <li>Category</li>
             <li>Category</li>
-            <li><a href="{{ url_for("icons") }}">Icons</a></li>
+            <li><a href="{{ url_for("IconsView:index") }}">Icons</a></li>
         </ul>
     </nav>
     <main>
@@ -69,7 +73,7 @@
                 </header>
                 <nav>
                     <ul>
-                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('AboutView:index') }}">About</a></li>
                         <li><a href="{{ url_for('ContactView:index') }}">Contact</a></li>
                         <li><a href="{{ url_for('products') }}">Products</a></li>
                     </ul>
