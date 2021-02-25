@@ -188,7 +188,7 @@ a:visited {
     color: var(--color-link-visited);
 }
 
-a.not_visited:visited {
+a.not_visited:visited, .not_visited a:visited {
     color: var(--color-link);
 }
 
