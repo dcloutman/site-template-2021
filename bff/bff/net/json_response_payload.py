@@ -14,10 +14,15 @@ class JsonResponsePayload:
     def __init__(self, data=None, error_code=None, error_trace=None, message=""):
         _payload = self.generate_empty_payload()
         self._payload["data"] = data
-        self._payload["error_code"] = error_code
 
-        # TODO: Disable when debug is turned off.
-        self._payload["error_trace"] = error_trace
+        if type(error_code) in ["str", "int"]:
+            self._payload["error_code"] = error_code
+        else:
+            raise TypeError("The error_code member in the response payload should be a string or integer")
+
+        # Stack traces should not be sent when debugging is turned off.
+        if 'FLASK_DEBUG' in os.environ and os.environ['FLASK_DEBUG'] == 1 and "str" == type(error_trace):
+            self._payload["error_trace"] = error_trace
 
         if "str" == type(message):
             self._payload["message"] = message
@@ -29,17 +34,20 @@ class JsonResponsePayload:
 
     def get_json_payload(self):
         """
-        Returns a json stringpayload.
+        Returns a json string payload.
         """
-        pass
+        return jsonify(self._payload)
 
     def get_json_response(self, response_code = 200):
         """
         Returns a JSON formatted Flask response.
         """
-        pass
+        return make_response(jsonify(_payload), response_code)
 
     def _generate_empty_payload(self):
+        """
+        Generates the payload dictionary internally.
+        """
         return {
             "error_code" : None,
             "error_trace" : None,
