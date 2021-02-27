@@ -1,14 +1,25 @@
 class HTTPResponseCodes:
     """
     HTTP Constants
+
+    Notes from https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+    are captured here for ease of reference.
+
+    * Informational responses (100–199)
+    * Successful responses (200–299)
+    * Redirects (300–399)
+    * Client errors (400–499)
+    * Server errors (500–599)
     """
+
     # The request has succeeded.
     OK = 200
 
     # The request has succeeded and a new resource has been created as a result.
     CREATED = 201
 
-    # The request has been received but not yet acted upon. Intended for cases where another process or server handles the request, or for batch processing.
+    # The request has been received but not yet acted upon. Intended for cases where another process 
+    # or server handles the request, or for batch processing.
     ACCEPTED = 202
 
     # There is no content to send for this request, but the headers may be useful.
@@ -81,26 +92,81 @@ class HTTPResponseCodes:
 
     # This response is sent when a request conflicts with the current state of the server. (Huh?)
     CONFLICT = 409
+
+    # This response is sent when the requested content has been permanently deleted from
+    # server, with no forwarding address. Clients are expected to remove their caches and
+    # links to the resource. The HTTP specification intends this status code to be used for 
+    # "limited-time, promotional services". APIs should not feel compelled to indicate resources 
+    # that have been deleted with this status code.
     GONE = 410
+
+    # Server rejected the request because the Content-Length header field is not defined and the
+    # server requires it.
     LENGTH_REQUIRED = 411
+
+    # The client has indicated preconditions in its headers which the server does not meet.
     PRECONDITION_FAILED = 412
+
+    # Request entity is larger than limits defined by server; the server might close the connection
+    # or return an Retry-After header field.
     PAYLOAD_TOO_LARGE = 413
+
+    # The URI requested by the client is longer than the server is willing to interpret.
     URI_TOO_LONG = 414
+
+
+    # The media format of the requested data is not supported by the server, so the server is 
+    # rejecting the request.
     UNSUPPORTED_MEDIA_TYPE = 415
+
+    # The range specified by the `Range` header field in the request can't be fulfilled. It's possible 
+    # that the range is outside the size of the target URI's data.
     RANGE_NOT_SATISFIABLE = 416
+
+    # This response code means the expectation indicated by the Expect request header field can't be
+    # met by the server.
     EXPECTATION_FAILED = 417
 
-    # "I'm a teapot". Barf.-
+    # "I'm a teapot". Barf.
     TEAPOT = 418
+
+    # The request was directed at a server that is not able to produce a response. This can be sent
+    # by a server that is not configured to produce responses for the combination of scheme and authority
+    # that are included in the request URI.
     MISDIRECTED_REQUEST = 421 
+
+    # The request was well-formed but was unable to be followed due to semantic errors.
     UNPROCESSABLE_ENTITY_WEBDAV = 422
+
+    # The resource that is being accessed is locked.
     LOCKED_WEBDAV = 423
+
+    # The request failed due to failure of a previous request.
     FAILED_DEPENDENCY_WEBDAV = 424
+
+    # Indicates that the server is unwilling to risk processing a request that might be replayed.
     TOO_EARLY = 425
+
+    # The server refuses to perform the request using the current protocol but might be willing to
+    # do so after the client upgrades to a different protocol. The server sends an Upgrade header 
+    # in a 426 response to indicate the required protocol(s).
     UPGRADE_REQUIRED = 426
+
+    # The server is unwilling to process the request because its header fields are too
+    # large. The request may be resubmitted after reducing the size of the request header
+    # fields.
     PRECONDITION_REQUIRED = 428
+
+    # The user has sent too many requests in a given amount of time ("rate limiting").
     TOO_MANY_REQUESTS = 429
+
+    # The server is unwilling to process the request because its header fields are too
+    # large. The request may be resubmitted after reducing the size of the request header
+    # fields.
     REQUEST_HEADER_FIELDS_TOO_LARGE = 431
+
+    # The user-agent requested a resource that cannot legally be provided, such as a 
+    # web page censored by a government.
     UNAVAILABLE_FOR_LEGAL_REASONS = 451
 
 
