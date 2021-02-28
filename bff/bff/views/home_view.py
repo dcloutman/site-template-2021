@@ -1,6 +1,6 @@
 from flask import make_response, current_app, render_template, url_for, jsonify, request
 from flask_classful import FlaskView, route
-from .. net.http_response_code_constants import HTTPResponseCodeConstants
+from .. net.http_response_codes import HTTPResponseCodes
 from os import environ
 import json
 import requests
@@ -13,4 +13,4 @@ class HomeView(FlaskView):
         return response
 
     def index(self):
-        return render_template("home.jinja"), HTTPResponseCodeConstants.OK
+        return render_template("home.jinja"), HTTPResponseCodes.OK
