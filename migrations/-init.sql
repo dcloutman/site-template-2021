@@ -9,13 +9,13 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+-- SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+-- /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+-- /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+-- /*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `site_template_2021`
@@ -32,8 +32,8 @@ USE `site_template_2021`;
 CREATE TABLE `email_addresses` (
   `email_address_id` bigint(20) UNSIGNED NOT NULL,
   `email_address` varchar(320) NOT NULL,
-  `time_added` datetime DEFAULT current_timestamp(),
-  `time_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time_added` datetime DEFAULT CURRENT_TIMESTAMP,
+  `time_updated` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -46,8 +46,8 @@ CREATE TABLE `email_lists` (
   `email_list_id` mediumint(5) UNSIGNED NOT NULL,
   `list_name` varchar(1023) NOT NULL,
   `list_description` mediumtext NOT NULL,
-  `time_added` datetime DEFAULT current_timestamp(),
-  `time_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time_added` datetime DEFAULT CURRENT_TIMESTAMP,
+  `time_updated` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='A table of mailing lists.';
 
 --
@@ -69,8 +69,8 @@ CREATE TABLE `email_list_subscriptions` (
   `email_list_id` mediumint(8) UNSIGNED NOT NULL,
   `email_address_id` bigint(20) UNSIGNED NOT NULL,
   `subscription_source_id` int(8) UNSIGNED NOT NULL,
-  `time_added` datetime DEFAULT current_timestamp(),
-  `time_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time_added` datetime DEFAULT CURRENT_TIMESTAMP,
+  `time_updated` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -84,8 +84,8 @@ CREATE TABLE `email_list_subscription_sources` (
   `string_identifier` varchar(255) DEFAULT NULL COMMENT 'A short string for easy programmatic access. Must be unique.',
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `time_added` datetime DEFAULT current_timestamp(),
-  `time_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time_added` datetime DEFAULT CURRENT_TIMESTAMP,
+  `time_updated` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -106,8 +106,8 @@ INSERT INTO `email_list_subscription_sources` (`subscription_source_id`, `string
 CREATE TABLE `email_subscription_source_default_lists` (
   `subscription_source_id` int(10) UNSIGNED NOT NULL,
   `email_list_id` mediumint(8) UNSIGNED NOT NULL,
-  `time_added` datetime DEFAULT current_timestamp(),
-  `time_updated` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `time_added` datetime DEFAULT CURRENT_TIMESTAMP,
+  `time_updated` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List source associations set defaults for different forms.';
 
 --
