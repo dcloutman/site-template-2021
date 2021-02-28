@@ -1,4 +1,5 @@
 from flask import jsonify, make_response
+from .. net.http_response_codes import HTTPResponseCodes
 """
 Generates a JSON response payload with the following members:
     data: Jsonified data that is being passed to the client for parsing and consumption. Use data from this field for your standard logic flows.
@@ -38,7 +39,7 @@ class JsonResponsePayload:
         """
         return jsonify(self._payload)
 
-    def get_json_response(self, response_code = 200):
+    def get_json_response(self, response_code = HTTPResponseCodes.OK):
         """
         Returns a JSON formatted Flask response.
         """
