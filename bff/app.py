@@ -7,7 +7,7 @@ from bff.views.contact_view import ContactView
 from bff.views.about_view import AboutView
 from bff.views.icons_view import IconsView
 from bff.views.login_view import LoginView
-
+from bff.views.admin_emails_view import AdminEmailsView
 
 # Register view classes with the Flask app.
 HomeView.register(app)
@@ -15,6 +15,7 @@ ContactView.register(app)
 AboutView.register(app)
 IconsView.register(app)
 LoginView.register(app)
+AdminEmailsView.register(app)
 
 @app.route('/products')
 def products():
