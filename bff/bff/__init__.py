@@ -29,7 +29,8 @@ def initialize_db(app):
     if 'DB_NAME' in os.environ:
         db_name = os.environ['DB_NAME']
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@{db_host}/{db_name}'
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://{db_username}:{db_password}@{db_host}/{db_name}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
