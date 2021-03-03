@@ -1,6 +1,7 @@
 from flask import make_response, current_app, render_template, url_for, jsonify, request
 from flask_classful import FlaskView, route
 from .. net.http_response_codes import HTTPResponseCodes
+from .. models.email_addresses import EmailAddress
 from os import environ
 
 
@@ -12,7 +13,7 @@ class AdminEmailsView(FlaskView):
         return response
 
     def index(self):
-        all_emails = ['f392039@example.com', 'fxx9@example.com']
+        all_emails = EmailAddress.query.all()
         return render_template("admin_emails_view.jinja", all_emails=all_emails), HTTPResponseCodes.OK
 
     def post(self):

@@ -1,9 +1,11 @@
+from .. import db
+
 class EmailAddress(db.Model):
     """
     Represents the email_addresses table in the MySQL database.
     """
 
-    __table_name__ = "email_addresses"
+    __tablename__ = "email_addresses"
 
     email_address_id = db.Column(db.Integer, primary_key=True)
     email_address = db.Column(db.String(320), nullable=False)

@@ -1,3 +1,4 @@
+from .. import db
 
 class EmailList(db.Model):
     """
@@ -5,7 +6,7 @@ class EmailList(db.Model):
     Stores metadata about email lists.
     """
 
-    __table_name__ = "email_lists"
+    __tablename__ = "email_lists"
 
     email_list_id = db.Column(db.Integer, primary_key=True)
     list_name = db.Column(db.String(1023), nullable=False)

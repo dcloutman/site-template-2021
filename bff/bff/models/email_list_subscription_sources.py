@@ -1,3 +1,4 @@
+from .. import db
 
 class EmailList(db.Model):
     """
@@ -5,7 +6,7 @@ class EmailList(db.Model):
     Identifies site features containing forms that add emails to lists.
     """
 
-    __table_name__ = "email_list_subscription_sources"
+    __tablename__ = "email_list_subscription_sources"
 
     subscription_source_id = db.Column(db., primary_key = True)
     # A short string for easy programmatic access. Must be unique.
