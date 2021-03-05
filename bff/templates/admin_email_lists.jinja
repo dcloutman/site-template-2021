@@ -1,0 +1,18 @@
+{% extends "--base.jinja" %}
+{%block page_headline %}
+    ADMIN: Email Lists
+{% endblock %}
+{% block content %}
+
+    <ul>
+    {% for email_list in all_email_lists %}
+        <li>
+            <header>
+                <h2>{{ email_list.list_name }}</h2>
+            </header>
+            <p>{{ email_list.list_description }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
