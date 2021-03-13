@@ -455,7 +455,7 @@ a.circle-button {
 
 
 /** Overlays */
-#lightbox_sticker {
+#lightbox_sticky_wrapper {
     display: none;
     position: sticky;
     top: 0px;
@@ -503,7 +503,7 @@ a.circle-button {
  *  LIGHTBOX: Activate lightbox with classes on body tag. 
  *  Email lightbox: class="active_lightbox email_signup";
  */
-body.active_lightbox #lightbox_sticker {
+body.active_lightbox #lightbox_sticky_wrapper {
     display: block;
 }
 
@@ -515,6 +515,12 @@ body.active_lightbox {
 
 body.active_lightbox.email_signup #lightbox_content_email_signup {
     display: block;
+}
+
+#email_lightbox_form {
+    background-color: var(--color-gray-light);
+    border-radius: .5em;
+    padding: 1em;
 }
 
 #lightbox_background {
