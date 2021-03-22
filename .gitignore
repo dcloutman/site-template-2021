@@ -3,12 +3,13 @@
 /bff/include
 /bff/node_modules
 /bff/share
+/bff/start
 
 /api/bin
 /api/lib
 /api/include
 /api/node_modules
 /api/share
-
+/api/start
 
 __pycache__
