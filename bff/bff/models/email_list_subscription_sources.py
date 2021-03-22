@@ -8,11 +8,11 @@ class EmailList(db.Model):
 
     __tablename__ = "email_list_subscription_sources"
 
-    subscription_source_id = db.Column(db., primary_key = True)
+    subscription_source_id = db.Column(db.Integer, primary_key = True)
     # A short string for easy programmatic access. Must be unique.
     string_identifier = db.Column(db.String(255), nullable=True)
     name = db.Column(db.String(255), nullable=False)
-    description = db.Column(db., nullable=False)
+    description = db.Column(db.Text, nullable=False)
     time_added = db.Column(db.DateTime, nullable=True)
     time_updated = db.Column(db.DateTime, nullable=True)
 
