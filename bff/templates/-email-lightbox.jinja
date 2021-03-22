@@ -16,12 +16,15 @@
         </header>
         <p>Stay up to date with Organization by signing up for Organization's e-mail updates.</p>
         <form id="email_lightbox_form">
+            {{ email_lightbox_form.csrf_token }}
             <div class="grid-container-3-1">
                 <div>
-                    <label>Email</label>
+                    {{ email_lightbox_form.email.label }}
+                    <!-- <label>Email</label> -->
                 </div>
                 <div>
-                    <input type="text" name="email_signup_modal_email">
+                    {{ email_lightbox_form.email(size=30) }}
+                    <!-- <input type="text" name="email_signup_modal_email"> -->
                 </div>
                 <div>
                     <input type="submit" value="Submit">
