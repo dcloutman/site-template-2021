@@ -36,11 +36,13 @@
     </nav>
     <main>
         <div id="main_wrapper" class="outer_content_wrapper">
+            {% if not hide_page_header %}
             <header id="page_header">
-            {% block page_header %}
-                <h1 id="page_headline">{% block page_headline %}{{ page_headline }}{% endblock %}</h1>
-            {% endblock %}
+                {% block page_header %}
+                    <h1 id="page_headline">{% block page_headline %}{{ page_headline }}{% endblock %}</h1>
+                {% endblock %}
             </header>
+            {% endif %}
 
             {% if show_page_aside %}
                 <aside id="page_aside">
