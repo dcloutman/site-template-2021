@@ -15,7 +15,7 @@ class AdminEmailsView(FlaskView):
 
     def index(self):
         all_emails = EmailAddress.query.all()
-        return render_standard_nonauthorized("admin_emails_view.jinja", all_emails=all_emails), HTTPResponseCodes.OK
+        return render_standard_nonauthorized("admin_emails_view.jinja", template_vars={"all_emails": "all_emails", "show_page_aside": False, "hide_page_header": False}), HTTPResponseCodes.OK
 
     def post(self):
         return HTTPResponseCodes.INTERNAL_SERVER_ERROR

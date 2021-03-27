@@ -14,4 +14,4 @@ class HomeView(FlaskView):
         return response
 
     def index(self):
-        return render_standard_nonauthorized("home.jinja"), HTTPResponseCodes.OK
+        return render_standard_nonauthorized("home.jinja", template_vars={"show_page_aside": True}), HTTPResponseCodes.OK

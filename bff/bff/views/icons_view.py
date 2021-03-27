@@ -14,4 +14,4 @@ class IconsView(FlaskView):
         return response
 
     def index(self):
-        return render_standard_nonauthorized("icons.jinja"), HTTPResponseCodes.OK
+        return render_standard_nonauthorized("icons.jinja", template_vars={"show_page_aside": False, "hide_page_header": False}), HTTPResponseCodes.OK

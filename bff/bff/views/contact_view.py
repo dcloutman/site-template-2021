@@ -14,7 +14,7 @@ class ContactView(FlaskView):
         return response
 
     def index(self):
-        return render_standard_nonauthorized("contact.jinja"), HTTPResponseCodes.OK
+        return render_standard_nonauthorized("contact.jinja", template_vars={"show_page_aside": False, "hide_page_header": False}), HTTPResponseCodes.OK
 
     def post(self):
         return HTTPResponseCodes.INTERNAL_SERVER_ERROR
