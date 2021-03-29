@@ -2,9 +2,9 @@ from flask import make_response, current_app, url_for, jsonify, request
 from flask_classful import FlaskView, route
 from .. net.http_response_codes import HTTPResponseCodes
 from .. util.render_helpers import render_standard_nonauthorized
-from os import environ
-import json
-import requests
+#from os import environ
+#import json
+#import requests
 
 class AboutView(FlaskView):
     route_prefix = '' # Could be used to set a configurable site path using os.environ. Need config system.
