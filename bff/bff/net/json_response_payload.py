@@ -9,7 +9,7 @@ Generates a JSON response payload with the following members:
 """
 
 
-class JsonResponsePayload:
+class JsonResponsePayload():
     _payload = None
 
     def __init__(self, data=None, error_code=None, error_trace=None, message=""):
